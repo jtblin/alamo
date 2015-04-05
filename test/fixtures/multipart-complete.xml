@@ -1,0 +1,4 @@
+<CompleteMultipartUpload>
+	<Part><PartNumber>1</PartNumber><ETag>foobar</ETag></Part>
+	<Part><PartNumber>2</PartNumber><ETag>barfoo</ETag></Part>
+</CompleteMultipartUpload>

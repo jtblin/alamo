@@ -1,0 +1,7 @@
+<Error>
+	<Key>/some_key</Key>
+	<Code>NoSuchKey</Code>
+	<HostId>hid</HostId>
+	<Message>No such key</Message>
+	<RequestId>rid</RequestId>
+</Error>
