@@ -1,6 +1,6 @@
 {
   "name": "alamo",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "High level full streaming API s3 client with multipart upload and concurrent uploads, and automatic retries with exponential backoff",
   "author": "Jerome Touffe-Blin <jtblin@gmail.com> (http://about.me/jtblin)",
   "homepage": "https://github.com/jtblin/alamo",
