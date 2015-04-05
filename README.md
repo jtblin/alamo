@@ -2,12 +2,12 @@
 [![Build Status](https://travis-ci.org/jtblin/alamo.png)](https://travis-ci.org/jtblin/alamo)
 [![Code Climate](https://codeclimate.com/github/jtblin/alamo/badges/gpa.svg)](https://codeclimate.com/github/jtblin/alamo)
 [![Dependency Status](https://david-dm.org/jtblin/alamo.svg)](https://david-dm.org/jtblin/alamo)
-[![Code Coverage](test/coverage.svg)](https://github.com/jtblin/alamo)
+![Code Coverage](https://rawgit.com/jtblin/alamo/master/test/coverage.svg)
 [![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)
 
 # Overview
 
-`alamo` is a wrapper around [know](https://github.com/LearnBoost/knox) that provides an higher level abstraction
+`alamo` is a wrapper around [knox](https://github.com/LearnBoost/knox) that provides an higher level abstraction
 for s3 with handling of response status codes and automatic parsing of XML error bodies. It also provide a consistent
 full (writing and reading) streaming interface, including multipart upload for large artifacts. Alamo implements
 automatic retries on error with exponential back-off.
