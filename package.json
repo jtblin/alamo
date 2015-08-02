@@ -31,17 +31,27 @@
   },
   "devDependencies": {
     "chai": "^2.2.0",
-    "istanbul": "^0.3.13",
+    "istanbul": "^0.3.17",
     "istanbul-cobertura-badger": "0.0.4",
-    "mocha": "^2.2.1",
+    "jscs": "^2.0.0",
+    "jshint": "^2.8.0",
+    "mocha": "^2.2.5",
     "nock": "^1.4.0",
     "sinon": "^1.14.1",
     "sinon-chai": "^2.7.0",
     "stream-ext": "0.0.1"
   },
   "scripts": {
-    "test": "make cov",
-    "watchtest": "NODE_ENV=test mocha -w test/",
-    "viewcov": "open test/coverage/lcov-report/index.html"
+    "check": "jshint . --verbose && jscs . && npm test",
+    "major": "npm version major",
+    "minor": "npm version minor",
+    "patch": "npm version patch",
+    "release": "git push && git push --tags && npm publish",
+    "release-major": "npm run check && npm run major && npm run release",
+    "release-minor": "npm run check && npm run minor && npm run release",
+    "release-patch": "npm run check && npm run patch && npm run release",
+    "test": "NODE_ENV=test istanbul cover _mocha -- -R list && istanbul report cobertura && node test/support/badge.js",
+    "viewcov": "open test/coverage/lcov-report/index.html",
+    "watchtest": "NODE_ENV=test mocha -w test/"
   }
 }
