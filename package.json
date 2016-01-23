@@ -27,7 +27,7 @@
     "knox": "^0.9.2",
     "queue-async": "^1.0.7",
     "retry-me": "^1.0.0",
-    "simple-xml": "^0.0.9"
+    "xml2js": "^0.4.16"
   },
   "devDependencies": {
     "chai": "^2.2.0",
