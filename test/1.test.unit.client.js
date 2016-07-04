@@ -203,6 +203,27 @@
           req.end();
         });
 
+        it('parses the response, emit an error on body parsing, even with missing property', function (done) {
+          var xml = xmlFixture('error-no-key');
+          mock.expects('request').withExactArgs('GET', '/some_key', {}).returns(stream);
+          res.statusCode = 404;
+          res.headers = { 'content-length': xml.length };
+          var req = client.stream('GET', '/some_key');
+          req.on('pipe', done.bind(null, new Error('Unexpected call to pipe')));
+          req.on('error', function (err) {
+            err.should.be.an.instanceOf(Error);
+            err.status.should.equal(404);
+            err.message.should.equal('No such key');
+            done();
+          });
+          stream.end = function () {
+            stream.emit('response', res);
+            res.emit('data', new Buffer(xml));
+            res.emit('end');
+          };
+          req.end();
+        });
+
         it('parses the response, emit an error and do not try to parse empty responses', function (done) {
           var xml = xmlFixture('error');
           mock.expects('request').withExactArgs('GET', '/some_key', {}).returns(stream);
